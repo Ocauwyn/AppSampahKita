@@ -1,0 +1,82 @@
+
+[versions]
+# Android Gradle Plugin
+agp = "8.10.0"
+
+# Kotlin
+kotlin = "2.0.21"
+
+# AndroidX Libraries
+coreKtx = "1.16.0"
+appcompat = "1.7.1"
+material = "1.12.0"
+activity = "1.10.1" # Anda tambahkan ini, akan saya pakai
+constraintlayout = "2.2.1" # Anda tambahkan ini, akan saya pakai
+cardview = "1.0.0" # Tambahkan ini jika belum ada
+
+# Room Database (Versi yang saya rekomendasikan)
+room = "2.6.1"
+
+# Lifecycle (ViewModel, LiveData, Runtime) (Versi yang saya rekomendasikan)
+lifecycle = "2.7.0"
+
+# Coroutines (Versi yang saya rekomendasikan)
+coroutines = "1.7.3"
+
+# Hilt (Dagger Hilt) (Versi yang saya rekomendasikan)
+hilt = "2.51"
+
+# Navigation Component (Versi yang Anda berikan)
+navigation = "2.9.0"
+navigationSafeArgs = "2.9.0" # Alias khusus untuk plugin Safe Args, agar versinya sama dengan navigation
+
+# Testing
+junit = "4.13.2"
+junitVersion = "1.2.1" # androidx.test.ext:junit
+espressoCore = "3.6.1"
+activityVersion = "1.10.1"
+
+[libraries]
+# AndroidX Libraries
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" } # Menggunakan activity-ktx
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+
+# Room Database
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
+# Lifecycle components
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+# Coroutines
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Hilt
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+# Navigation Component
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+
+# Testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activityVersion" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" } # PASTIKAN INI ADA DAN MEREFERENSI VERSI KOTLIN
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" } # PASTIKAN INI ADA
+android-navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationSafeArgs" } # Tambahkan plugin Safe Args

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tambah_edit_sampah.form_info_ritasi.FormInfoRitasiFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_buttons">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_step_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_green_bg"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                tools:text="2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info ritasi"
+                android:textColor="@color/green_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="masukan data ritasi pengangkutan sampah."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_id_ritasi_tpa"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:endIconDrawable="@drawable/ic_lock"
+                app:endIconMode="none"> <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_id_ritasi_tpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ID Ritasi TPA"
+                android:focusable="false"
+                android:clickable="false"
+                tools:text="#7384565"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_tanggal"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal *"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="true"
+                    tools:text="29/Feb/2024"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_volume_sampah"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:errorEnabled="true"
+                app:endIconMode="custom" app:endIconContentDescription="Unit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_volume_sampah"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Volume sampah *"
+                    android:inputType="numberDecimal"
+                    tools:text="2,75"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ton"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_jam_masuk"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:endIconDrawable="@drawable/ic_lock"
+                app:endIconMode="none"> <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_jam_masuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jam masuk"
+                android:focusable="false"
+                android:clickable="false"
+                tools:text="-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_jam_keluar"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:endIconDrawable="@drawable/ic_lock"
+                app:endIconMode="none"> <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_jam_keluar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jam keluar"
+                android:focusable="false"
+                android:clickable="false"
+                tools:text="-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_petugas_pencatat"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:endIconDrawable="@drawable/ic_lock"
+                app:endIconMode="none"> <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_petugas_pencatat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Petugas pencatat"
+                android:focusable="false"
+                android:clickable="false"
+                tools:text="Maman"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_bruto"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:errorEnabled="true"
+                app:endIconMode="custom" app:endIconContentDescription="Unit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_bruto"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Bruto *"
+                    android:inputType="numberDecimal"
+                    tools:text="0"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_tarra"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:errorEnabled="true"
+                app:endIconMode="custom" app:endIconContentDescription="Unit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_tarra"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Tarra *"
+                    android:inputType="numberDecimal"
+                    tools:text="0"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_netto_tonase"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconDrawable="@drawable/ic_lock"
+                app:endIconMode="none" app:endIconContentDescription="Unit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_netto_tonase"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Netto/tonase"
+                    android:focusable="false"
+                    android:clickable="false"
+                    tools:text="123,45"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save_edit_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_check"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@android:color/white"
+        android:backgroundTint="@color/green_primary"
+        android:visibility="gone"
+        android:contentDescription="Simpan Perubahan"/>
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sebelumnya"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Sebelumnya"
+            android:layout_marginEnd="8dp"
+            app:strokeColor="@color/green_primary"
+            android:textColor="@color/green_primary"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_selanjutnya"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Selanjutnya"
+            app:cornerRadius="6dp"
+            android:backgroundTint="@color/green_primary"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

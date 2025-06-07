@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_truck_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Truck Icon"
+            android:src="@drawable/ic_truck_solid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/green_primary" />
+
+        <TextView
+            android:id="@+id/tv_id_surat_jalan_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="ID Surat Jalan"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/iv_truck_icon"
+            app:layout_constraintTop_toTopOf="@id/iv_truck_icon" />
+
+        <TextView
+            android:id="@+id/tv_id_surat_jalan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/green_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_truck_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_surat_jalan_label"
+            tools:text="#16378489" />
+
+        <TextView
+            android:id="@+id/tv_no_kendaraan_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="No.Kendaraan"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_id_surat_jalan_label"
+            app:layout_constraintStart_toEndOf="@id/tv_id_surat_jalan"
+            app:layout_constraintTop_toTopOf="@id/tv_id_surat_jalan_label" />
+
+        <TextView
+            android:id="@+id/tv_no_kendaraan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_id_surat_jalan"
+            app:layout_constraintStart_toEndOf="@id/tv_id_surat_jalan"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_kendaraan_label"
+            tools:text="KT 8756 CI" />
+
+        <TextView
+            android:id="@+id/tv_volume_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volume"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_id_surat_jalan_label" />
+
+        <TextView
+            android:id="@+id/tv_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_id_surat_jalan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_volume_label"
+            tools:text="2,78 ton" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_surat_jalan" />
+
+        <TextView
+            android:id="@+id/tv_id_ritasi_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ID Ritasi"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tv_id_ritasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_ritasi_label"
+            tools:text="#-" />
+
+        <TextView
+            android:id="@+id/tv_tanggal_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Tanggal"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_id_ritasi_label"
+            app:layout_constraintStart_toEndOf="@id/tv_id_ritasi"
+            app:layout_constraintTop_toTopOf="@id/tv_id_ritasi_label" />
+
+        <TextView
+            android:id="@+id/tv_tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/tv_id_ritasi"
+            app:layout_constraintTop_toBottomOf="@id/tv_tanggal_label"
+            tools:text="29 Feb 2023" />
+
+        <TextView
+            android:id="@+id/tv_sumber_sampah_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sumber sampah"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_id_ritasi_label" />
+
+        <TextView
+            android:id="@+id/tv_sumber_sampah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_id_ritasi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sumber_sampah_label"
+            tools:text="TPS Sangkuriang" />
+
+        <Button
+            android:id="@+id/btn_menuju_tpa"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_truck_solid"
+            android:drawablePadding="4dp"
+            android:text="Menuju TPA"
+            android:textColor="@color/green_primary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_ritasi"
+            app:strokeColor="@color/green_primary" />
+
+        <Button
+            android:id="@+id/btn_lihat_detail"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawablePadding="4dp"
+            android:text="Lihat Detail"
+            android:textColor="@color/green_primary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_menuju_tpa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_menuju_tpa" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

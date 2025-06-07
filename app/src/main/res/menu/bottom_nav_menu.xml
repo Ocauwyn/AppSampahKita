@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/daftarSampahFragment"
+        android:icon="@drawable/ic_tuck_outline"
+        android:title="Transaksi Sampah" />
+    <item
+        android:id="@+id/dataMasterFragment"
+        android:icon="@drawable/ic_database"
+        android:title="Data Master" />
+</menu>

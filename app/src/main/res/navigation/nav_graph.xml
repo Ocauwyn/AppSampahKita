@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/daftarSampahFragment">
+
+    <fragment
+        android:id="@+id/daftarSampahFragment"
+        android:name="com.example.appsampahkita.ui.daftar_sampah.DaftarSampahFragment"
+        android:label="Daftar Sampah Masuk"
+        tools:layout="@layout/fragment_daftar_sampah">
+        <action
+            android:id="@+id/action_daftarSampahFragment_to_addEditSampahActivity"
+            app:destination="@id/addEditSampahActivity" />
+        <action
+            android:id="@+id/action_daftarSampahFragment_to_detailSampahFragment"
+            app:destination="@id/detailSampahFragment">
+            <argument
+                android:name="transaksiId"
+                app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataMasterFragment"
+        android:name="com.example.appsampahkita.ui.data_master.DataMasterFragment"
+        android:label="Data Master"
+        tools:layout="@layout/fragment_data_master" />
+
+    <activity
+        android:id="@+id/addEditSampahActivity"
+        android:name="com.example.appsampahkita.ui.tambah_edit_sampah.AddEditSampahActivity"
+        android:label="Tambah Data Sampah" >
+        <deepLink
+            app:uri="sampahkita://add_edit_sampah/{transaksiId}" />
+        <argument
+            android:name="transaksiId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </activity>
+
+
+    <fragment
+        android:id="@+id/detailSampahFragment"
+        android:name="com.example.appsampahkita.ui.detail_sampah.DetailSampahFragment"
+        android:label="Detail Sampah Masuk"
+        tools:layout="@layout/fragment_detail_sampah">
+        <argument
+            android:name="transaksiId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_detailSampahFragment_to_ubahDataInfoRitasiFragment"
+            app:destination="@id/ubahDataInfoRitasiFragment">
+            <argument
+                android:name="transaksiId"
+                app:argType="long" />
+            <argument
+                android:name="editMode"
+                app:argType="string"
+                android:defaultValue="ritasi" />
+        </action>
+        <action
+            android:id="@+id/action_detailSampahFragment_to_ubahDataSuratTugasFragment"
+            app:destination="@id/ubahDataSuratTugasFragment">
+            <argument
+                android:name="transaksiId"
+                app:argType="long" />
+            <argument
+                android:name="editMode"
+                app:argType="string"
+                android:defaultValue="suratTugas" />
+        </action>
+        <action
+            android:id="@+id/action_detailSampahFragment_to_ubahDataLokasiSumberFragment"
+            app:destination="@id/ubahDataLokasiSumberFragment">
+            <argument
+                android:name="transaksiId"
+                app:argType="long" />
+            <argument
+                android:name="editMode"
+                app:argType="string"
+                android:defaultValue="lokasiSumber" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/ubahDataInfoRitasiFragment"
+        android:name="com.example.appsampahkita.ui.tambah_edit_sampah.form_info_ritasi.FormInfoRitasiFragment"
+        android:label="Ubah Data Info Ritasi"
+        tools:layout="@layout/fragment_form_info_ritasi">
+        <argument
+            android:name="transaksiId"
+            app:argType="long" />
+        <argument
+            android:name="editMode"
+            app:argType="string"
+            android:defaultValue="ritasi" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ubahDataSuratTugasFragment"
+        android:name="com.example.appsampahkita.ui.tambah_edit_sampah.form_surat_tugas.FormSuratTugasFragment"
+        android:label="Ubah Data Surat Tugas"
+        tools:layout="@layout/fragment_form_surat_tugas">
+        <argument
+            android:name="transaksiId"
+            app:argType="long" />
+        <argument
+            android:name="editMode"
+            app:argType="string"
+            android:defaultValue="suratTugas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ubahDataLokasiSumberFragment"
+        android:name="com.example.appsampahkita.ui.tambah_edit_sampah.form_lokasi_sumber.FormLokasiSumberFragment"
+        android:label="Ubah Data Lokasi Sumber Sampah"
+        tools:layout="@layout/fragment_form_lokasi_sumber">
+        <argument
+            android:name="transaksiId"
+            app:argType="long" />
+        <argument
+            android:name="editMode"
+            app:argType="string"
+            android:defaultValue="lokasiSumber" />
+    </fragment>
+
+    <navigation android:id="@+id/add_edit_flow_nav_graph"
+        app:startDestination="@id/formLokasiSumberFragment">
+        <fragment
+            android:id="@+id/formLokasiSumberFragment"
+            android:name="com.example.appsampahkita.ui.tambah_edit_sampah.form_lokasi_sumber.FormLokasiSumberFragment"
+            android:label="Tambah Lokasi Sumber Sampah"
+            tools:layout="@layout/fragment_form_lokasi_sumber">
+            <action
+                android:id="@+id/action_formLokasiSumberFragment_to_formInfoRitasiFragment"
+                app:destination="@id/formInfoRitasiFragment" />
+            <argument
+                android:name="transaksiId"
+                app:argType="long"
+                android:defaultValue="-1L" />
+            <!-- Argument editMode juga diperlukan di sini untuk konsistensi Safe Args -->
+            <argument
+                android:name="editMode"
+                app:argType="string"
+                android:defaultValue="none" />
+        </fragment>
+        <fragment
+            android:id="@+id/formInfoRitasiFragment"
+            android:name="com.example.appsampahkita.ui.tambah_edit_sampah.form_info_ritasi.FormInfoRitasiFragment"
+            android:label="Tambah Info Ritasi"
+            tools:layout="@layout/fragment_form_info_ritasi">
+            <action
+                android:id="@+id/action_formInfoRitasiFragment_to_formSuratTugasFragment"
+                app:destination="@id/formSuratTugasFragment" />
+            <action
+                android:id="@+id/action_formInfoRitasiFragment_to_formLokasiSumberFragment"
+                app:destination="@id/formLokasiSumberFragment"
+                app:popUpToInclusive="true" />
+            <argument
+                android:name="transaksiId"
+                app:argType="long"
+                android:defaultValue="-1L" />
+            <argument
+                android:name="editMode"
+                app:argType="string"
+                android:defaultValue="none" />
+        </fragment>
+        <fragment
+            android:id="@+id/formSuratTugasFragment"
+            android:name="com.example.appsampahkita.ui.tambah_edit_sampah.form_surat_tugas.FormSuratTugasFragment"
+            android:label="Tambah Info Surat Tugas"
+            tools:layout="@layout/fragment_form_surat_tugas">
+            <action
+                android:id="@+id/action_formSuratTugasFragment_to_formInfoRitasiFragment"
+                app:destination="@id/formInfoRitasiFragment"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_formSuratTugasFragment_to_daftarSampahFragment"
+                app:destination="@id/daftarSampahFragment"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true"/>
+            <argument
+                android:name="transaksiId"
+                app:argType="long"
+                android:defaultValue="-1L" />
+            <argument
+                android:name="editMode"
+                app:argType="string"
+                android:defaultValue="none" />
+        </fragment>
+    </navigation>
+</navigation>

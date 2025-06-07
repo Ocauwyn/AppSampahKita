@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bottom_sheet_rounded_corners"> <ImageView
+    android:id="@+id/iv_illustration"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:scaleType="centerInside"
+    android:layout_marginBottom="16dp"
+    android:visibility="gone"
+    tools:src="@drawable/city_illustration_delete_bottom_sheet"
+    android:contentDescription="Illustration"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        tools:text="Anda Yakin Menghapus Data Ini?"/>
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        tools:text="Data transaksi sampah ini akan dihapus permanen. Tindakan ini tidak bisa dibatalkan."/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ya, Hapus sekarang"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/red_error"
+        android:layout_marginBottom="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancel"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Batal"
+        android:textColor="@color/green_primary"/>
+
+</LinearLayout>

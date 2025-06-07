@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.detail_sampah.DetailSampahFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="Detail Sampah Masuk"
+            app:titleTextColor="@color/black" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/iv_header_illustration"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/city_illustration"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+        android:contentDescription="Header Illustration" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/iv_header_illustration"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_info_surat_tugas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/iv_icon_surat_tugas"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_truck_solid"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/green_primary"
+                        android:contentDescription="Surat Tugas Icon"/>
+
+                    <TextView
+                        android:id="@+id/tv_title_surat_tugas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Info Surat tugas"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@id/iv_icon_surat_tugas"
+                        app:layout_constraintTop_toTopOf="@id/iv_icon_surat_tugas"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_icon_surat_tugas"/>
+
+                    <ImageView
+                        android:id="@+id/iv_edit_surat_tugas"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:tint="@color/green_primary"
+                        android:contentDescription="Edit Surat Tugas"/>
+
+                    <TextView
+                        android:id="@+id/label_id_surat_jalan_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID Surat Jalan"
+                        android:textSize="12sp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_icon_surat_tugas"/>
+                    <TextView
+                        android:id="@+id/tv_id_surat_jalan_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="#7384565"
+                        android:textColor="@color/green_primary"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_id_surat_jalan_detail"/>
+
+                    <TextView
+                        android:id="@+id/label_no_kendaraan_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:text="No.Kendaraan"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_id_surat_jalan_detail"
+                        app:layout_constraintTop_toTopOf="@id/label_id_surat_jalan_detail" />
+
+                    <TextView
+                        android:id="@+id/tv_no_kendaraan_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_id_surat_jalan_detail"
+                        app:layout_constraintTop_toBottomOf="@id/label_no_kendaraan_detail"
+                        tools:text="KT 8756 CI" />
+
+                    <TextView
+                        android:id="@+id/label_jenis_pengirim_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Pengirim"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/label_id_surat_jalan_detail"/>
+                    <TextView
+                        android:id="@+id/tv_jenis_pengirim_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Pemerintah"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_jenis_pengirim_detail"/>
+
+                    <TextView android:id="@+id/label_jenis_kendaraan_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jenis Kendaraan" android:textSize="12sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_id_surat_jalan_detail"/>
+                    <TextView android:id="@+id/tv_jenis_kendaraan_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="LH" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_jenis_kendaraan_detail"/>
+
+                    <TextView
+                        android:id="@+id/label_nama_pengemudi_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Nama Pengemudi"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_no_kendaraan_detail"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/label_jenis_kendaraan_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_no_kendaraan_detail" />
+
+                    <TextView
+                        android:id="@+id/tv_nama_pengemudi_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="82dp"
+                        android:layout_marginTop="1dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_jenis_kendaraan_detail"
+                        app:layout_constraintTop_toBottomOf="@id/label_nama_pengemudi_detail"
+                        tools:text="Asep" />
+
+                    <TextView android:id="@+id/label_crew1_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crew 1" android:textSize="12sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/label_jenis_kendaraan_detail"/>
+                    <TextView android:id="@+id/tv_crew1_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Rendi" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/label_crew1_detail"/>
+
+                    <TextView android:id="@+id/label_crew2_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crew 2" android:textSize="12sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_jenis_kendaraan_detail"/>
+                    <TextView android:id="@+id/tv_crew2_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Asep" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_crew2_detail"/>
+
+                    <TextView android:id="@+id/label_crew3_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crew 3" android:textSize="12sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_crew2_detail" app:layout_constraintTop_toTopOf="@id/label_crew2_detail"/>
+                    <TextView android:id="@+id/tv_crew3_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Adam" android:textColor="@android:color/black" android:textSize="14sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_crew2_detail" app:layout_constraintTop_toBottomOf="@id/label_crew3_detail"/>
+
+                    <TextView android:id="@+id/label_crew4_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crew 4" android:textSize="12sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/label_crew2_detail"/>
+                    <TextView android:id="@+id/tv_crew4_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Raden" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/label_crew4_detail"/>
+
+                    <TextView android:id="@+id/label_crew5_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Crew 5" android:textSize="12sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_crew2_detail"/>
+                    <TextView android:id="@+id/tv_crew5_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Ridwan" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_crew5_detail"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_info_ritasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/iv_icon_ritasi"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_truck_solid"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/green_primary"
+                        android:contentDescription="Ritasi Icon"/>
+
+                    <TextView
+                        android:id="@+id/tv_title_ritasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Info Ritasi"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@id/iv_icon_ritasi"
+                        app:layout_constraintTop_toTopOf="@id/iv_icon_ritasi"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_icon_ritasi"/>
+
+                    <ImageView
+                        android:id="@+id/iv_edit_ritasi"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:tint="@color/green_primary"
+                        android:contentDescription="Edit Ritasi"/>
+
+                    <TextView android:id="@+id/label_id_ritasi_tpa_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID Ritasi TPA" android:textSize="12sp" android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/iv_icon_ritasi"/>
+                    <TextView android:id="@+id/tv_id_ritasi_tpa_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="#1637848" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_id_ritasi_tpa_detail"/>
+
+                    <TextView android:id="@+id/label_tanggal_ritasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tanggal" android:textSize="12sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_id_ritasi_tpa_detail" app:layout_constraintTop_toTopOf="@id/label_id_ritasi_tpa_detail"/>
+                    <TextView android:id="@+id/tv_tanggal_ritasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="29 Feb 2023" android:textColor="@android:color/black" android:textSize="14sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_id_ritasi_tpa_detail" app:layout_constraintTop_toBottomOf="@id/label_tanggal_ritasi_detail"/>
+
+                    <TextView android:id="@+id/label_volume_sampah_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Volume sampah" android:textSize="12sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/label_id_ritasi_tpa_detail"/>
+                    <TextView android:id="@+id/tv_volume_sampah_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2,75 ton" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/label_volume_sampah_detail"/>
+
+                    <TextView android:id="@+id/label_jam_masuk_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jam masuk" android:textSize="12sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_id_ritasi_tpa_detail"/>
+                    <TextView android:id="@+id/tv_jam_masuk_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="10.00 WIB" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_jam_masuk_detail"/>
+
+                    <TextView android:id="@+id/label_jam_keluar_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jam keluar" android:textSize="12sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_jam_masuk_detail" app:layout_constraintTop_toTopOf="@id/label_jam_masuk_detail"/>
+                    <TextView android:id="@+id/tv_jam_keluar_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="-" android:textColor="@android:color/black" android:textSize="14sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_jam_masuk_detail" app:layout_constraintTop_toBottomOf="@id/label_jam_keluar_detail"/>
+
+                    <TextView android:id="@+id/label_petugas_pencatat_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Petugas pencatat" android:textSize="12sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/label_jam_masuk_detail"/>
+                    <TextView android:id="@+id/tv_petugas_pencatat_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Maman" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/label_petugas_pencatat_detail"/>
+
+                    <TextView android:id="@+id/label_bruto_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bruto" android:textSize="12sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_jam_masuk_detail"/>
+                    <TextView android:id="@+id/tv_bruto_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="123" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_bruto_detail"/>
+
+                    <TextView android:id="@+id/label_tarra_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tarra" android:textSize="12sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_bruto_detail" app:layout_constraintTop_toTopOf="@id/label_bruto_detail"/>
+                    <TextView android:id="@+id/tv_tarra_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="123" android:textColor="@android:color/black" android:textSize="14sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_bruto_detail" app:layout_constraintTop_toBottomOf="@id/label_tarra_detail"/>
+
+                    <TextView android:id="@+id/label_netto_tonase_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Netto/tonase" android:textSize="12sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/label_bruto_detail"/>
+                    <TextView android:id="@+id/tv_netto_tonase_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="123.45KG" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/label_netto_tonase_detail"/>
+
+                    <TextView android:id="@+id/label_zona_pembuangan_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Zona Pembuangan" android:textSize="12sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_bruto_detail"/>
+                    <TextView android:id="@+id/tv_zona_pembuangan_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="-" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_zona_pembuangan_detail"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_info_lokasi_sumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/iv_icon_lokasi_sumber"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_lokasi"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/green_primary"
+                        android:contentDescription="Lokasi Sumber Icon"/>
+
+                    <TextView
+                        android:id="@+id/tv_title_lokasi_sumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Info Lokasi Sumber Sampah"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@id/iv_icon_lokasi_sumber"
+                        app:layout_constraintTop_toTopOf="@id/iv_icon_lokasi_sumber"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_icon_lokasi_sumber"/>
+
+                    <ImageView
+                        android:id="@+id/iv_edit_lokasi_sumber"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:tint="@color/green_primary"
+                        android:contentDescription="Edit Lokasi Sumber"/>
+
+                    <TextView android:id="@+id/label_kode_surat_jalan_lokasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kode surat jalan" android:textSize="12sp" android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/iv_icon_lokasi_sumber"/>
+                    <TextView android:id="@+id/tv_kode_surat_jalan_lokasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="#1234567" android:textColor="@color/green_primary" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_kode_surat_jalan_lokasi_detail"/>
+
+                    <TextView android:id="@+id/label_lokasi_sumber_sampah_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lokasi sumber sampah" android:textSize="12sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_kode_surat_jalan_lokasi_detail" app:layout_constraintTop_toTopOf="@id/label_kode_surat_jalan_lokasi_detail"/>
+                    <TextView android:id="@+id/tv_lokasi_sumber_sampah_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="TPS Sangkuriang" android:textColor="@android:color/black" android:textSize="14sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_kode_surat_jalan_lokasi_detail" app:layout_constraintTop_toBottomOf="@id/label_lokasi_sumber_sampah_detail"/>
+
+                    <TextView android:id="@+id/label_status_keterangkutan_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Status keterangkutan" android:textSize="12sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/label_kode_surat_jalan_lokasi_detail"/>
+                    <TextView android:id="@+id/tv_status_keterangkutan_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Belum" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/label_status_keterangkutan_detail"/>
+
+                    <TextView android:id="@+id/label_alamat_lokasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alamat lokasi" android:textSize="12sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_kode_surat_jalan_lokasi_detail"/>
+                    <TextView android:id="@+id/tv_alamat_lokasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Jl.sangkuriang bawah" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/label_alamat_lokasi_detail"/>
+
+                    <TextView android:id="@+id/label_jenis_pengirim_lokasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jenis Pengirim" android:textSize="12sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_alamat_lokasi_detail" app:layout_constraintTop_toTopOf="@id/label_alamat_lokasi_detail"/>
+                    <TextView android:id="@+id/tv_jenis_pengirim_lokasi_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Pemerintah" android:textColor="@android:color/black" android:textSize="14sp" android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@id/tv_alamat_lokasi_detail" app:layout_constraintTop_toBottomOf="@id/label_jenis_pengirim_lokasi_detail"/>
+
+                    <TextView android:id="@+id/label_volume_terangkut_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Volume Terangkut" android:textSize="12sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/label_alamat_lokasi_detail"/>
+                    <TextView android:id="@+id/tv_volume_terangkut_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2,75 ton" android:textColor="@android:color/black" android:textSize="14sp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@id/label_volume_terangkut_detail"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_delete_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FF5722"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_delete"
+                        app:tint="@android:color/white"
+                        android:contentDescription="Delete Icon"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Hapus Data Ini?"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="@android:color/white"
+                        android:contentDescription="Arrow Right"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ProgressBar
+                android:id="@+id/progress_bar_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_detail_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Data tidak ditemukan atau terjadi kesalahan."
+                android:textColor="@color/red_error"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
