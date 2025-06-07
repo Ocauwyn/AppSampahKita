@@ -31,7 +31,5 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        // Hubungkan BottomNavigationView dengan NavController
-        binding.bottomNavigationView.setupWithNavController(navController)
     }
 }
